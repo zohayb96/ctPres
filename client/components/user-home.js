@@ -44,15 +44,33 @@ class UserHome extends Component {
       events: [
         {
           id: 1,
-          text: 'Event 1',
-          start: '2019-03-18',
-          end: '2019-03-20'
+          text: 'Clean my room. Its really messy',
+          start: '2019-03-25',
+          end: '2019-03-26'
         },
         {
           id: 2,
-          text: 'Event 2',
-          start: '2019-03-04',
-          end: '2019-03-06'
+          text: 'Dry clean my suit',
+          start: '2019-03-26',
+          end: '2019-03-26'
+        },
+        {
+          id: 1,
+          text: 'Work On Presentation',
+          start: '2019-03-25',
+          end: '2019-03-26'
+        },
+        {
+          id: 1,
+          text: 'Submit Assignment',
+          start: '2019-03-25',
+          end: '2019-03-26'
+        },
+        {
+          id: 1,
+          text: 'Vintage Clothing Sale',
+          start: '2019-03-25',
+          end: '2019-03-26'
         }
       ]
     })
@@ -78,12 +96,9 @@ class UserHome extends Component {
 
   // VIEW users function in class diagram - changed to help code readability.
 
-  async viewLeaderBoard() {
-    // const topUsers = await axios.get(`http://localhost:8080/api/users`)
+  viewLeaderBoard() {
     this.setState({
-      // viewState: 'leaderboard',
       displayDataType: 'leaderboard'
-      // leaderboard: topUsers
     })
     console.log(this.state)
   }
@@ -158,28 +173,6 @@ class UserHome extends Component {
     }
 
     const {username, userpoints} = this.props
-
-    // DATA VALUES TO BE CHANGED AS SYNCED FROM DATABASE
-    // const tasksData = [
-    //   {id: 1, taskName: 'task1'},
-    //   {id: 2, taskName: 'do laundry'}
-    // ]
-    // const eventsData = [
-    //   {id: 1, eventName: 'event1'},
-    //   {id: 2, eventName: 'buy watch'}
-    // ]
-    // const bothData = [
-    //   {id: 1, entryName: 'hello'},
-    //   {id: 2, entryName: 'bye'},
-    //   {id: 3, entryName: 'event1'},
-    //   {id: 4, entryName: 'buy watch'}
-    // ]
-    // const userData = [
-    //   {id: 1, name: 'zohayb'},
-    //   {id: 2, name: 'yasmin'},
-    //   {id: 3, name: 'john'},
-    //   {id: 4, name: 'burenkhuu '}
-    // ]
 
     return (
       <div className="userHome">
@@ -371,7 +364,6 @@ class UserHome extends Component {
                                 <button
                                   className="ui white button"
                                   type="button"
-                                  // onClick={() => viewLeaderBoard()}
                                 >
                                   <Link
                                     to={{
@@ -470,11 +462,7 @@ class UserHome extends Component {
                               >
                                 Remove Reminder
                               </div>
-                              <button
-                                className="ui white button"
-                                type="button"
-                                // onClick={() => viewLeaderBoard()}
-                              >
+                              <button className="ui white button" type="button">
                                 <Link
                                   to={{
                                     pathname: '/editreminder',
@@ -582,7 +570,6 @@ class UserHome extends Component {
                                   <button
                                     className="ui white button"
                                     type="button"
-                                    // onClick={() => viewLeaderBoard()}
                                   >
                                     <Link
                                       to={{
@@ -675,6 +662,21 @@ class UserHome extends Component {
                                     >
                                       Remove Reminder
                                     </div>
+                                    <button
+                                      className="ui white button"
+                                      type="button"
+                                    >
+                                      <Link
+                                        to={{
+                                          pathname: '/editreminder',
+                                          state: {
+                                            remId: reminder.id
+                                          }
+                                        }}
+                                      >
+                                        Edit Reminder
+                                      </Link>
+                                    </button>
                                   </div>
                                 )
                               })

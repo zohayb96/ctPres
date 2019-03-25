@@ -28,7 +28,6 @@ class EditReminder extends Component {
 
   handleChange(evt) {
     this.setState({[evt.target.name]: evt.target.value})
-    console.log(this.state)
   }
 
   handleEntryhange(event) {
@@ -61,7 +60,7 @@ class EditReminder extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div class="ui entry segment">
+          <div className="ui entry segment">
             <label name="name">Reminder Note</label>
             <input
               type="text"

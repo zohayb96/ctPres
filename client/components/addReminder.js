@@ -30,7 +30,6 @@ class AddReminder extends Component {
 
   handleChange(evt) {
     this.setState({[evt.target.name]: evt.target.value})
-    console.log(this.state)
   }
 
   handleEntryhange(event) {
@@ -62,7 +61,7 @@ class AddReminder extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-        <div class="ui entry segment">
+          <div className="ui entry segment">
             <label>Task / Event</label>
             <form onSubmit={this.handleEntryChange}>
               <select onChange={this.handleChange} name="entryId">
@@ -100,7 +99,7 @@ class AddReminder extends Component {
             <button type="submit" className="submit">
               Add Reminder
             </button>
-          </div>  
+          </div>
         </form>
       </div>
     )

@@ -27,7 +27,6 @@ class AddEvent extends Component {
   }
 
   async handleSubmit(submitEvent) {
-    console.log(this.state)
     submitEvent.preventDefault()
     try {
       const createdEntry = await axios.post(`/api/entries/`, {
@@ -60,11 +59,10 @@ class AddEvent extends Component {
   }
 
   render() {
-    const {username} = this.props
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-         <div class="ui entry segment">
+          <div className="ui entry segment">
             <label name="name">Entry Name</label>
             <input
               type="text"
@@ -108,7 +106,7 @@ class AddEvent extends Component {
             <button type="submit" className="submit">
               Add Event
             </button>
-           </div> 
+          </div>
         </form>
       </div>
     )

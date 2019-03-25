@@ -58,11 +58,10 @@ class EditTask extends Component {
   render() {
     const entryData = this.props.location.state.data
     const taskData = this.props.location.state.data.task
-    console.log(this.props)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-         <div class="ui entry segment">
+          <div className="ui entry segment">
             <label name="name">Entry Name</label>
             <input
               type="text"
@@ -91,7 +90,7 @@ class EditTask extends Component {
             <button type="submit" className="submit">
               Edit Task
             </button>
-          </div>  
+          </div>
         </form>
       </div>
     )

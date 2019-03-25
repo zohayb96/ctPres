@@ -20,13 +20,6 @@ class EditEvent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  // componentDidMount() {
-  //   this.setState({
-  //     startDate: this.props.location.state.data.event.eventStartDate,
-  //     endDate: this.props.location.state.data.event.eventEndDate
-  //   })
-  // }
-
   handleChange(evt) {
     this.setState({[evt.target.name]: evt.target.value})
   }
@@ -67,14 +60,13 @@ class EditEvent extends Component {
   }
 
   render() {
-    const {username} = this.props
     const entryData = this.props.location.state.data
     const eventData = this.props.location.state.data.event
     console.log(this.props)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div class="ui entry segment">  
+          <div className="ui entry segment">
             <label name="name">Entry Name</label>
             <input
               type="text"
@@ -118,7 +110,7 @@ class EditEvent extends Component {
             <button type="submit" className="submit">
               Edit Event
             </button>
-           </div> 
+          </div>
         </form>
       </div>
     )
